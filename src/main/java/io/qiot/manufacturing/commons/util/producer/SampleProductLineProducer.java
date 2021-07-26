@@ -13,8 +13,15 @@ import io.qiot.manufacturing.commons.domain.productline.SizeChartRangesDTO;
 @ApplicationScoped
 public class SampleProductLineProducer {
 
-    public ProductLineDTO generateProductLine() {
+    public ProductLineDTO generate() {
         ProductLineDTO pl = new ProductLineDTO();
+        
+        doGenerate(pl);
+        
+        return pl;
+    }
+
+    protected void doGenerate(ProductLineDTO pl) {
         
         pl.id=UUID.randomUUID();
 
@@ -25,7 +32,7 @@ public class SampleProductLineProducer {
         pl.print = printing();
 
         pl.packaging = packaging();
-        return pl;
+        
     }
 
     private SizeChartRangesDTO size() {
