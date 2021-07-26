@@ -1,5 +1,6 @@
 package io.qiot.manufacturing.commons.util.producer;
 
+import java.time.Instant;
 import java.util.UUID;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -7,16 +8,19 @@ import javax.enterprise.context.ApplicationScoped;
 import io.qiot.manufacturing.commons.domain.productline.ColorRangesDTO;
 import io.qiot.manufacturing.commons.domain.productline.PackagingRangesDTO;
 import io.qiot.manufacturing.commons.domain.productline.PrintingRangesDTO;
-import io.qiot.manufacturing.commons.domain.productline.ProductLineDTO;
+import io.qiot.manufacturing.commons.domain.productline.GlobalProductLineDTO;
+import io.qiot.manufacturing.commons.domain.productline.MarginsDTO;
 import io.qiot.manufacturing.commons.domain.productline.SizeChartRangesDTO;
 
 @ApplicationScoped
-public class SampleProductLineProducer {
+public class SampleGlobalProductLineProducer {
 
-    public ProductLineDTO generateProductLine() {
-        ProductLineDTO pl = new ProductLineDTO();
-        
-        pl.id=UUID.randomUUID();
+    public GlobalProductLineDTO generateProductLine() {
+        GlobalProductLineDTO pl = new GlobalProductLineDTO();
+
+        pl.id = UUID.randomUUID();
+
+        pl.createdOn = Instant.now();
 
         pl.sizeChart = size();
 
@@ -25,6 +29,9 @@ public class SampleProductLineProducer {
         pl.print = printing();
 
         pl.packaging = packaging();
+
+        pl.margins = margins();
+
         return pl;
     }
 
@@ -66,5 +73,14 @@ public class SampleProductLineProducer {
         packaging.min = 0.1;
         packaging.max = 0.98;
         return packaging;
+    }
+
+    private MarginsDTO margins() {
+        MarginsDTO margins = new MarginsDTO();
+        margins.weaving = 0.5;
+        margins.coloring = 2;
+        margins.printing = 0.1;
+        margins.packaging = 0.1;
+        return margins;
     }
 }
