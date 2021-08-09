@@ -5,9 +5,9 @@ import javax.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 @ApplicationScoped
-public class ReplyToQueueNameProducer {
+public class ProductLineReplyToQueueNameProducer {
 
-    @ConfigProperty(name = "qiot.production.chain.validation.replyto-queue-prefix")
+    @ConfigProperty(name = "qiot.productline.request.replyto-queue-prefix", defaultValue = "none")
     String replyToQueuePrefix;
 
     public String getReplyToQueueName(String machineryId) {

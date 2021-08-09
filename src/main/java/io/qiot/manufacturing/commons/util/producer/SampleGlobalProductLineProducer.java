@@ -13,12 +13,12 @@ import io.qiot.manufacturing.commons.domain.productline.PrintingRangesDTO;
 import io.qiot.manufacturing.commons.domain.productline.SizeChartRangesDTO;
 
 @ApplicationScoped
-public class SampleGlobalProductLineProducer  {
+public class SampleGlobalProductLineProducer {
 
     public GlobalProductLineDTO generate() {
         GlobalProductLineDTO pl = new GlobalProductLineDTO();
-        
-        pl.id=UUID.randomUUID();
+
+        pl.id = UUID.randomUUID();
 
         pl.sizeChart = size();
 
@@ -27,10 +27,12 @@ public class SampleGlobalProductLineProducer  {
         pl.print = printing();
 
         pl.packaging = packaging();
-        
+
         pl.createdOn = Instant.now();
 
         pl.margins = margins();
+
+        pl.active = true;
 
         return pl;
     }
