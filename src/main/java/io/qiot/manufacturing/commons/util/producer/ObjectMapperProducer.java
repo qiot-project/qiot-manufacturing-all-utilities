@@ -6,6 +6,10 @@ import javax.enterprise.inject.spi.InjectionPoint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * @author andreabattaglia
+ *
+ */
 @ApplicationScoped
 public class ObjectMapperProducer {
 

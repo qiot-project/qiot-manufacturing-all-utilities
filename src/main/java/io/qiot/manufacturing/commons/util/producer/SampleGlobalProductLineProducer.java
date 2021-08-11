@@ -12,6 +12,10 @@ import io.qiot.manufacturing.commons.domain.productline.PackagingRangesDTO;
 import io.qiot.manufacturing.commons.domain.productline.PrintingRangesDTO;
 import io.qiot.manufacturing.commons.domain.productline.SizeChartRangesDTO;
 
+/**
+ * @author andreabattaglia
+ *
+ */
 @ApplicationScoped
 public class SampleGlobalProductLineProducer {
 
@@ -66,23 +70,23 @@ public class SampleGlobalProductLineProducer {
     private PrintingRangesDTO printing() {
         PrintingRangesDTO printing = new PrintingRangesDTO();
         printing.min = 0.1;
-        printing.max = 0.98;
+        printing.max = 0.9;
         return printing;
     }
 
     private PackagingRangesDTO packaging() {
         PackagingRangesDTO packaging = new PackagingRangesDTO();
-        packaging.min = 0.1;
-        packaging.max = 0.98;
+        packaging.min = 0.2;
+        packaging.max = 0.8;
         return packaging;
     }
 
     private MarginsDTO margins() {
         MarginsDTO margins = new MarginsDTO();
-        margins.weaving = 0.5;
-        margins.coloring = 2;
-        margins.printing = 0.1;
-        margins.packaging = 0.1;
+        margins.weaving = 0.01;
+        margins.coloring = 1;
+        margins.printing = 0.001;
+        margins.packaging = 0.001;
         return margins;
     }
 }

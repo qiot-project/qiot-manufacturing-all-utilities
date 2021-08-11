@@ -9,6 +9,10 @@ import java.util.Random;
 import javax.enterprise.context.ApplicationScoped;
 
 
+/**
+ * @author andreabattaglia
+ *
+ */
 @ApplicationScoped
 public class RandomGeneratorProducer {
 

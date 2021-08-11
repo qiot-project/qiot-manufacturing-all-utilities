@@ -2,6 +2,12 @@ package io.qiot.manufacturing.commons.util.converter;
 
 import java.util.List;
 
+/**
+ * @author andreabattaglia
+ *
+ * @param <S>
+ * @param <D>
+ */
 public interface DataObjectConverter<S,D> {
 
     D sourceToDest(S src);

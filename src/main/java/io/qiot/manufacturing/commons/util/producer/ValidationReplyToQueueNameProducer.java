@@ -4,6 +4,10 @@ import javax.enterprise.context.ApplicationScoped;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
+/**
+ * @author andreabattaglia
+ *
+ */
 @ApplicationScoped
 public class ValidationReplyToQueueNameProducer {
 

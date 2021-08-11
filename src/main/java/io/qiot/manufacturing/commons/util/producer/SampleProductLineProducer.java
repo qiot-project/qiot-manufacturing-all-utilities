@@ -10,6 +10,10 @@ import io.qiot.manufacturing.commons.domain.productline.PrintingRangesDTO;
 import io.qiot.manufacturing.commons.domain.productline.ProductLineDTO;
 import io.qiot.manufacturing.commons.domain.productline.SizeChartRangesDTO;
 
+/**
+ * @author andreabattaglia
+ *
+ */
 @ApplicationScoped
 public class SampleProductLineProducer {
 
