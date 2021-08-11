@@ -5,6 +5,7 @@ import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 /**
  * @author andreabattaglia
@@ -17,11 +18,12 @@ public class ObjectMapperProducer {
 
     public ObjectMapperProducer() {
         MAPPER = new ObjectMapper();
-//        PolymorphicTypeValidator ptv = BasicPolymorphicTypeValidator.builder()
-//                .allowIfBaseType(AbstractTelemetry.class).build();
-//        MAPPER.activateDefaultTyping(ptv,
-//                ObjectMapper.DefaultTyping.OBJECT_AND_NON_CONCRETE);
-//        MAPPER.registerModule(new JavaTimeModule());
+        // PolymorphicTypeValidator ptv =
+        // BasicPolymorphicTypeValidator.builder()
+        // .allowIfBaseType(AbstractTelemetry.class).build();
+        // MAPPER.activateDefaultTyping(ptv,
+        // ObjectMapper.DefaultTyping.OBJECT_AND_NON_CONCRETE);
+        MAPPER.registerModule(new JavaTimeModule());
     }
 
     @Produces
