@@ -1,3 +1,4 @@
+package io.qiot.manufacturing.all.commons.util.producer.exceptionmapper;
 //package io.qiot.manufacturing.commons.util.producer.exceptionmapper;
 //
 //import javax.inject.Inject;

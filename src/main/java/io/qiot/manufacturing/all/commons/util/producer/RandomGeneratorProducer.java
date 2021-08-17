@@ -1,4 +1,4 @@
-package io.qiot.manufacturing.commons.util.producer;
+package io.qiot.manufacturing.all.commons.util.producer;
 
 
 import java.util.PrimitiveIterator.OfDouble;
