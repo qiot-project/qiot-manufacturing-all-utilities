@@ -3,10 +3,14 @@ name: Java CI with Maven
 on:
   workflow_dispatch:
   
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
   push:
-    branches: [ "**" ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
