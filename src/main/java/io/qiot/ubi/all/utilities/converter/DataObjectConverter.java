@@ -1,4 +1,4 @@
-package io.qiot.manufacturing.all.commons.util.converter;
+package io.qiot.ubi.all.utilities.converter;
 
 import java.util.List;
 

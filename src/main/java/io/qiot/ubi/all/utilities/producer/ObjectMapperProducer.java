@@ -1,4 +1,4 @@
-package io.qiot.manufacturing.all.commons.util.producer;
+package io.qiot.ubi.all.utilities.producer;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
