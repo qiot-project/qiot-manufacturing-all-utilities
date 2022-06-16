@@ -1,21 +1,14 @@
-name: Nightly Build (from Develop branch)
+name: Build TAG (from main branch)
 
 on:
-  workflow_dispatch:
-  
-  push:
-    branches:
-      - develop
+  release:
+    types:
+      - created
     paths-ignore:
       - .github/workflows/**
-#  pull_request:
-#    branches:
-#      - develop
-#    paths-ignore:
-#      - .github/workflows/**
 
 jobs:
-  call-nightly-build:
+  call-build-tag:
 #    environment: development
     uses: qiot-project/qiot-ubi-all-reusable-workflows/.github/workflows/module-build-deploy.yml@main
     # Use the "secrets" keyword to pass named secrets.

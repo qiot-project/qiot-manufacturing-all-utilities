@@ -1,23 +1,24 @@
-name: Nightly Build (from Develop branch)
+name: Test feature build
 
 on:
   workflow_dispatch:
   
   push:
     branches:
-      - develop
+      - feature/**
     paths-ignore:
       - .github/workflows/**
-#  pull_request:
-#    branches:
-#      - develop
-#    paths-ignore:
-#      - .github/workflows/**
+      
+  pull_request:
+    branches:
+      - feature/**
+    paths-ignore:
+      - .github/workflows/**
 
 jobs:
-  call-nightly-build:
+  call-test-feature-build:
 #    environment: development
-    uses: qiot-project/qiot-ubi-all-reusable-workflows/.github/workflows/module-build-deploy.yml@main
+    uses: qiot-project/qiot-ubi-all-reusable-workflows/.github/workflows/module-test-feature.yml@main
     # Use the "secrets" keyword to pass named secrets.
     secrets:
       ARTIFACTORY_HOSTNAME: ${{ secrets.ARTIFACTORY_HOSTNAME }}

@@ -1,23 +1,23 @@
-name: Nightly Build (from Develop branch)
+name: Release Candidate (from Release branch)
 
 on:
   workflow_dispatch:
   
   push:
     branches:
-      - develop
+      - release
     paths-ignore:
       - .github/workflows/**
 #  pull_request:
 #    branches:
-#      - develop
+#      - release
 #    paths-ignore:
 #      - .github/workflows/**
 
 jobs:
-  call-nightly-build:
+  call-release-candidate:
 #    environment: development
-    uses: qiot-project/qiot-ubi-all-reusable-workflows/.github/workflows/module-build-deploy.yml@main
+    uses: qiot-project/qiot-ubi-all-reusable-workflows/.github/workflows/module-release-candidate.yml@main
     # Use the "secrets" keyword to pass named secrets.
     secrets:
       ARTIFACTORY_HOSTNAME: ${{ secrets.ARTIFACTORY_HOSTNAME }}
