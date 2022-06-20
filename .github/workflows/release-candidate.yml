@@ -17,7 +17,10 @@ on:
 jobs:
   call-release-candidate:
 #    environment: development
-    uses: qiot-project/qiot-ubi-all-reusable-workflows/.github/workflows/module-release-candidate.yml@main
+    uses: qiot-project/qiot-ubi-all-reusable-workflows/.github/workflows/module-build-deploy.yml@main
+    # To pass named inputs to a called workflow, use the "with" keyword in a job.
+    with:
+      BRANCH: release
     # Use the "secrets" keyword to pass named secrets.
     secrets:
       ARTIFACTORY_HOSTNAME: ${{ secrets.ARTIFACTORY_HOSTNAME }}
